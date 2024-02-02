@@ -1,106 +1,118 @@
 
+let bank = 2000
 
 const players = [
 
     {
-        Name: 'Ralphy',
+        Name: 'ninja',
         Emoji: '🥷',
         Skill: 55,
         TeamNumber: 0,
 
     },
     {
-        Name: 'Abert',
+        Name: 'detective',
         Emoji: '🕵️‍♂️',
         Skill: 30,
         TeamNumber: 0,
 
     },
     {
-        Name: 'Ralphy',
+        Name: 'guard',
         Emoji: '💂‍♂️',
-        Skill: 25,
+        Skill: 20,
         TeamNumber: 0,
 
     },
     {
-        Name: 'Ralphy',
+        Name: 'cop',
         Emoji: '👮‍♂️',
         Skill: 25,
         TeamNumber: 0,
 
     },
     {
-        Name: 'Ralphy',
+        Name: 'superman',
         Emoji: '🦸‍♂️',
-        Skill: 25,
+        Skill: 80,
         TeamNumber: 0,
 
     },
     {
-        Name: 'Ralphy',
+        Name: 'wisard',
         Emoji: '🧙‍♂️',
-        Skill: 25,
+        Skill: 75,
         TeamNumber: 0,
 
     },
     {
-        Name: 'Ralphy',
+        Name: 'villan',
         Emoji: '🦹‍♂️',
-        Skill: 25,
+        Skill: 65,
         TeamNumber: 0,
 
     },
     {
-        Name: 'Ralphy',
+        Name: 'apprentice wisard',
         Emoji: '🧙',
-        Skill: 25,
+        Skill: 60,
         TeamNumber: 0,
 
     },
     {
-        Name: 'Ralphy',
+        Name: 'buttler',
         Emoji: '🤵‍♂️',
-        Skill: 25,
+        Skill: 10,
         TeamNumber: 0,
 
     },
     {
-        Name: 'Ralphy',
+        Name: 'fireman',
         Emoji: '👨‍🚒',
-        Skill: 25,
+        Skill: 15,
         TeamNumber: 0,
 
     }
 ]
 
-function assignTeamNumber() {
-    const assignBlueTeam = Math.floor(Math.random() * players.length)
-    const playerOnBlueTeam = players[assignBlueTeam]
-    playerOnBlueTeam.TeamNumber = 1
-    console.log(playerOnBlueTeam)
+// function assignTeamNumber() {
+//     // const assignBlueTeam = Math.floor(Math.random() * players.length)
+//     // const playerOnBlueTeam = players[assignBlueTeam]
+//     // playerOnBlueTeam.TeamNumber = 1
+//     // console.log(playerOnBlueTeam)
 
+
+players.forEach(player => {
+    // console.log(player.Name)
+    player.TeamNumber = Math.round(Math.random())
+    console.log(player);
+})
+
+
+function betRedTeam() {
 
 }
-
 
 
 function addPlayersEmoji() {
 
     let playerTeamNumber = 0
 
-    let playerEmojis = ''
+    let player1Emojis = ''
+    let player2Emojis = ''
 
     // const playerImages = players.filter(player => player.Emoji)
     // playerImages.forEach(player => playerEmojis += player.Emoji)
 
-    const playerNumbers = players.filter(player => player.TeamNumber == 0)
-    playerNumbers.forEach(player => playerEmojis += player.Emoji)
-    const playerLineupElement = document.getElementById('team1Lineup')
-    playerLineupElement.innerText = playerEmojis
+    const player1Numbers = players.filter(player => player.TeamNumber == 0)
+    player1Numbers.forEach(player => player1Emojis += player.Emoji)
+    const playerLineup1Element = document.getElementById('team1Lineup')
+    playerLineup1Element.innerText = player1Emojis
 
-
-
+    const player2Numbers = players.filter(player => player.TeamNumber == 1)
+    player2Numbers.forEach(player => player2Emojis += player.Emoji)
+    const playerLineup2Element = document.getElementById('team2Lineup')
+    playerLineup2Element.innerText = player2Emojis
 
 }
 
